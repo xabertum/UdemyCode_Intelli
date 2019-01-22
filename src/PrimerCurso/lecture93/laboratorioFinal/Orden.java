@@ -17,7 +17,7 @@ public class Orden {
 	if (contadorComputadoras < MAXCOMPUTADORAS) {
 	    computadoras[contadorComputadoras++] = computadora;
 	} else {
-	    System.out.println("Se ha superado el máximo de computadoras " + MAXCOMPUTADORAS);
+	    System.out.println("Se ha superado el maximo de computadoras " + MAXCOMPUTADORAS);
 	    
 	}
     }

@@ -22,7 +22,7 @@ public class EjemploMatrices {
 	    }
 	}
 
-	// Matriz de tipo String, notación simplificada
+	// Matriz de tipo String, notacion simplificada
 	String nombres [][] = {{"Teresa", "Cesar", "William"}, {"Yesenia", "Esteban", "Maria"}};
 	System.out.println("Longitud matriz nombres filas: " + nombres.length);
 	System.out.println("Longitud matriz nombres columnas: " + nombres[0].length);

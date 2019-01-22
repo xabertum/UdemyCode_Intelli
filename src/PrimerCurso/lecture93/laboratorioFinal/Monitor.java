@@ -22,7 +22,7 @@ public class Monitor {
     
     @Override
     public String toString() {
-	return "Monitor { " + "Marca = " + marca + "Tamaño = " + tamano;
+	return "Monitor { " + "Marca = " + marca + "Tamano = " + tamano;
     }
 
     

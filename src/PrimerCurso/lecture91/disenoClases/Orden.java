@@ -14,7 +14,7 @@ public class Orden {
     }
     
     public void agregarProducto (Producto producto) {
-	// si los productos agregados no superan el máximo
+	// si los productos agregados no superan el maximo
 	// de productos, agregamos el nuevo item
 	
 	if (contadorProductos < MAXPRODUCTOS) {
@@ -22,7 +22,7 @@ public class Orden {
 	    // e incrementamos el contador de productos
 	    productos[contadorProductos++] = producto;
 	} else  {
-	    System.out.println("Se ha superado el máximo de productos: " + MAXPRODUCTOS);
+	    System.out.println("Se ha superado el maximo de productos: " + MAXPRODUCTOS);
 	}
     }
     
