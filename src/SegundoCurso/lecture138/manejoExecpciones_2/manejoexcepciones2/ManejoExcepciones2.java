@@ -10,7 +10,7 @@ public class ManejoExcepciones2 {
     public static void main (String [] args) {
         AccesoDatos datos = new ImplementacionMysql();
         // Cambiamos el estado a simularError = true
-        datos.simularError(true);
+        datos.simularError(false);
         ejecutar(datos, "listar");
 
         // Cambiamos el estado a simularError = false
@@ -43,9 +43,19 @@ public class ManejoExcepciones2 {
             }
 
 
+        } else if ("insertar".equals(accion)) {
+            try {
+                datos.insertar();
+            } catch (AccesoDatosEx ex) {
+                System.out.println("Error acceso datos: podemos procesar solo la exceción mas generica");
+                ex.printStackTrace();
+            } finally {
+                System.out.println("Procesar finally es opcional, siempre se ejecutara sin importar si hubo error o no");
+            }
         }
-
-
+        else {
+            System.out.println("No se proporciono ninguna accion conocida");
+        }
 
     }
 }

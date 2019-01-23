@@ -24,7 +24,7 @@ public class ImplementacionMysql implements AccesoDatos {
         if (simularError) {
             throw new LecturaDatosEx("Error de lectura de datos");
         } else  {
-            System.out.println("lectura desde MySql");
+            System.out.println("Lectura desde MySql");
         }
     }
 
