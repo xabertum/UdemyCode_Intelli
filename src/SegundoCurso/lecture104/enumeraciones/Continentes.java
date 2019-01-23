@@ -1,4 +1,4 @@
-package SegundoCurso.lecture104.enumeraciones;
+package lecture104.enumeraciones;
 
 public enum Continentes {
 

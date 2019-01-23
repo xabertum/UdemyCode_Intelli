@@ -1,4 +1,4 @@
-package SegundoCurso.lecture112.modificadoresAccesoPaq1;
+package lecture112.modificadoresAccesoPaq1;
 
 public class Clase1 {
 

@@ -1,4 +1,4 @@
-package SegundoCurso.lecture99.javaDoc;
+package lecture99.javaDoc;
 
 /**
  * Clase para probar el concepto de JavaDoc
