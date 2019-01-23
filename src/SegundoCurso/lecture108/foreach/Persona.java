@@ -1,4 +1,4 @@
-package SegundoCurso.lecture108.foreach;
+package lecture108.foreach;
 
 public class Persona {
 
