@@ -1,4 +1,4 @@
-package SegundoCurso.lecture132.manejoExcepciones_1;
+package lecture132.manejoExcepciones_1;
 
 public class OperationException  extends Exception {
 
