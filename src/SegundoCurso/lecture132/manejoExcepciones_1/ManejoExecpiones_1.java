@@ -1,7 +1,5 @@
 package lecture132.manejoExcepciones_1;
 
-import lecture132.manejoExcepciones_1.Division;
-
 public class ManejoExecpiones_1 {
 
     public static void main (String[] args) {
