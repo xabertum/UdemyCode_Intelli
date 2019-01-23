@@ -1,4 +1,4 @@
-package SegundoCurso.lecture103.argumentosVariables;
+package lecture103.argumentosVariables;
 
 public class EjemploVarArgs {
 

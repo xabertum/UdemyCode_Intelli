@@ -1,4 +1,4 @@
-package SegundoCurso.lecture110.autoboxing;
+package lecture110.autoboxing;
 
 public class Autoboxing {
     public static void main (String [] args) {

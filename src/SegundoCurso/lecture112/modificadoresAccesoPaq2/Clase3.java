@@ -1,5 +1,5 @@
-package SegundoCurso.lecture112.modificadoresAccesoPaq2;
-import SegundoCurso.lecture112.modificadoresAccesoPaq1.Clase1;
+package lecture112.modificadoresAccesoPaq2;
+import lecture112.modificadoresAccesoPaq1.Clase1;
 
 public class Clase3 extends Clase1 {
 

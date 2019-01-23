@@ -1,4 +1,4 @@
-package SegundoCurso.lecture117.polimorfismo;
+package lecture117.polimorfismo;
 
 public class Empleado {
 

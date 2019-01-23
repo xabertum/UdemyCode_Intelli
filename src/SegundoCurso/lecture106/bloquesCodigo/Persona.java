@@ -1,4 +1,4 @@
-package SegundoCurso.lecture106.bloquesCodigo;
+package lecture106.bloquesCodigo;
 
 public class Persona {
 
