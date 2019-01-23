@@ -1,4 +1,4 @@
-package SegundoCurso.lecture131.javabeans;
+package lecture131.javabeans;
 
 public class ManejoJavaBeans {
 

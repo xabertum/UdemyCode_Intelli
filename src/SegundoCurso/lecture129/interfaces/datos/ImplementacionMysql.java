@@ -1,4 +1,4 @@
-package SegundoCurso.lecture129.interfaces.datos;
+package lecture129.interfaces.datos;
 
 public class ImplementacionMysql implements lecture129.interfaces.datos.AccesoDatos {
     @Override

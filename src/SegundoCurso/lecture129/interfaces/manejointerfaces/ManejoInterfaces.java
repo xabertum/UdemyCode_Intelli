@@ -1,8 +1,8 @@
-package SegundoCurso.lecture129.interfaces.manejointerfaces;
+package lecture129.interfaces.manejointerfaces;
 
-import SegundoCurso.lecture129.interfaces.datos.ImplementacionMysql;
-import SegundoCurso.lecture129.interfaces.datos.ImplementacionOracle;
 import lecture129.interfaces.datos.AccesoDatos;
+import lecture129.interfaces.datos.ImplementacionMysql;
+import lecture129.interfaces.datos.ImplementacionOracle;
 
 public class ManejoInterfaces {
 
