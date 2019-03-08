@@ -15,6 +15,15 @@ public class ManejoArchivos {
 
         //Escribir a un archvivo
         escribirArchivo(NOMBRE_ARCHIVO);
+
+        //Leer de un archivo
+        leerArchivo(NOMBRE_ARCHIVO);
+
+        //Anexar informacion a un archivo
+        anexarArchivo(NOMBRE_ARCHIVO);
+
+        //Leer archivo
+        leerArchivo(NOMBRE_ARCHIVO);
     }
 
 }
