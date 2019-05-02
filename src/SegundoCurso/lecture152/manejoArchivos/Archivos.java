@@ -25,7 +25,7 @@ public class Archivos {
             salida.println(contenido);
             salida.println();
             salida.close();
-            System.out.println("Se ha escrito correctamente al arvchivo");
+            System.out.println("Se ha escrito correctamente al archivo");
         } catch (IOException ex) {
             ex.printStackTrace();
         }
