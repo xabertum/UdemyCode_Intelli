@@ -49,6 +49,21 @@ public class AccesoDatosImpl implements AccesoDatos {
 
   @Override
   public String buscar(String nombreArchivo, String buscar) throws LecturaDatosExc {
+    File archivo = new File(nombreArchivo);
+    String resultado = null;
+    try {
+      BufferedReader entrada = new BufferedReader(new FileReader(archivo));
+      String linea = null;
+      int i = 0;
+      linea = entrada.readLine();
+      while (linea !=null) {
+
+      }
+    }catch (IOException ex) {
+      ex.printStackTrace();
+    }
+
+
     return null;
   }
 
