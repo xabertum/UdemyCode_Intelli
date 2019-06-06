@@ -44,7 +44,6 @@ public class AccesoDatosImpl implements AccesoDatos {
     }catch (IOException ex) {
       ex.printStackTrace();
     }
-
   }
 
   @Override
@@ -57,23 +56,37 @@ public class AccesoDatosImpl implements AccesoDatos {
       int i = 0;
       linea = entrada.readLine();
       while (linea !=null) {
-
+        if (buscar != null && buscar.equalsIgnoreCase(linea)) {
+          resultado = "Pelicula" + linea + " encontrada en el indice " + i;
+          break;
+        }
+        linea = entrada.readLine();
+        i++;
       }
+      entrada.close();
     }catch (IOException ex) {
       ex.printStackTrace();
     }
 
-
-    return null;
+    return resultado;
   }
 
   @Override
   public void crear(String nombreArchivo) throws AccesoDatosExc {
-
+    File archivo = new File(nombreArchivo);
+    try {
+      PrintWriter salida = new PrintWriter(new FileWriter(archivo));
+      salida.close();
+      System.out.println("Se ha creado el archivo correctamente");
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
   }
 
   @Override
   public void borrar(String nombreArchivo) throws AccesoDatosExc {
-
+    File archivo = new File(nombreArchivo);
+    archivo.delete();
+    System.out.println("Se ha borrado el archivo correctamente");
   }
 }
