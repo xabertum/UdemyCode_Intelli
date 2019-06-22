@@ -18,7 +18,7 @@ public class personasJDBC {
 
   /**
    *
-   * Ejecuta el insert en la tabla persona.
+   * Ejecuta el INSERT en la tabla persona.
    *
    * @param nombre
    * @param apellido
