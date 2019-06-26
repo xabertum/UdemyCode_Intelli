@@ -14,7 +14,7 @@ public class personasJDBC {
   private final String SQL_INSERT = "INSERT INTO persona(nombre, apellido) VALUES(?,?)";
   private final String SQL_UPDATE = "UPDATE persona SET nombre=?, apellido=? WHERE id_persona=?";
   private final String SQL_DELETE = "DELETE FROM persona WHERE id_persona=?";
-  private final String SQL_SELECT = "SELECT id_persona, nombre, apellidos FROM persona ORDER BY id_persona";
+  private final String SQL_SELECT = "SELECT id_persona, nombre, apellido FROM persona ORDER BY id_persona";
 
   /**
    *
@@ -104,9 +104,12 @@ public class personasJDBC {
     int rows = 0;
 
     try {
+      int index = 1;
       connection = Conexion.getConnection();
       System.out.println("Ejecutando Query: " + SQL_DELETE);
-      preparedStatement.setInt(1, id_persona);
+      preparedStatement = connection.prepareStatement(SQL_DELETE);
+      preparedStatement.setInt(index, id_persona);
+      rows = preparedStatement.executeUpdate();
       System.out.println("Registros eliminados: " + rows);
 
     } catch (SQLException ex) {
@@ -130,7 +133,7 @@ public class personasJDBC {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
-    Persona persona = new Persona();
+    Persona persona;
     List<Persona> personas = new ArrayList<Persona>();
 
     try {
@@ -139,6 +142,7 @@ public class personasJDBC {
       resultSet = preparedStatement.executeQuery();
 
       while (resultSet.next()) {
+        persona = new Persona();
         int id_persona = resultSet.getInt(1);
         String nombre = resultSet.getString(2);
         String apellido = resultSet.getString(3);
