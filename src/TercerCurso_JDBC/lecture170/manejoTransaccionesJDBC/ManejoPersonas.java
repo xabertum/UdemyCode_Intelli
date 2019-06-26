@@ -2,14 +2,12 @@ package lecture170.manejoTransaccionesJDBC;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 
+@SuppressWarnings("SpellCheckingInspection")
 public class ManejoPersonas {
 
   public static void main(String[] args) {
-
-    personasJDBC personasJDBC = new personasJDBC();
 
     Connection connection = null;
 
