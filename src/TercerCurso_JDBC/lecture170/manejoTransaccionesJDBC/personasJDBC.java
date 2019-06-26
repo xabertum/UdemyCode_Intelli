@@ -56,7 +56,10 @@ public class personasJDBC {
 
     } finally {
       Conexion.close(preparedStatement);
-      Conexion.close(connection);
+
+      if (this.userConn == null) {
+        Conexion.close(connection);
+      }
     }
 
     return rows;
@@ -73,7 +76,7 @@ public class personasJDBC {
    * @return
    */
 
-  public int update (int id_persona, String nombre, String apellido) {
+  public int update (int id_persona, String nombre, String apellido) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
     int rows = 0;
@@ -81,7 +84,7 @@ public class personasJDBC {
     try {
 
       int index = 1;
-      connection = Conexion.getConnection();
+      connection = (this.userConn != null) ? this.userConn : Conexion.getConnection();
       System.out.println("Ejecutando query: " + SQL_UPDATE);
       preparedStatement = connection.prepareStatement(SQL_UPDATE);
       preparedStatement.setString(index++, nombre);
@@ -90,11 +93,12 @@ public class personasJDBC {
       rows = preparedStatement.executeUpdate();
       System.out.println("Registros actualizados: " + rows);
 
-    } catch (Exception ex) {
-      ex.printStackTrace();
     } finally {
       Conexion.close(preparedStatement);
-      Conexion.close(connection);
+
+      if (this.userConn == null) {
+        Conexion.close(connection);
+      }
     }
 
     return rows;
@@ -108,26 +112,26 @@ public class personasJDBC {
    * @param id_persona
    * @return
    */
-  public int delete (int id_persona) {
+  public int delete (int id_persona) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
     int rows = 0;
 
     try {
       int index = 1;
-      connection = Conexion.getConnection();
+      connection = (this.userConn != null) ? this.userConn : Conexion.getConnection();
       System.out.println("Ejecutando Query: " + SQL_DELETE);
       preparedStatement = connection.prepareStatement(SQL_DELETE);
       preparedStatement.setInt(index, id_persona);
       rows = preparedStatement.executeUpdate();
       System.out.println("Registros eliminados: " + rows);
 
-    } catch (SQLException ex) {
-      ex.printStackTrace();
-
     } finally {
       Conexion.close(preparedStatement);
-      Conexion.close(connection);
+
+      if (this.userConn == null) {
+        Conexion.close(connection);
+      }
     }
     return rows;
   }
@@ -139,7 +143,7 @@ public class personasJDBC {
    *
    * @return
    */
-  public List<Persona> select () {
+  public List<Persona> select () throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
@@ -147,7 +151,7 @@ public class personasJDBC {
     List<Persona> personas = new ArrayList<Persona>();
 
     try {
-      connection = Conexion.getConnection();
+      connection = (this.userConn != null) ? this.userConn : Conexion.getConnection();
       preparedStatement = connection.prepareStatement(SQL_SELECT);
       resultSet = preparedStatement.executeQuery();
 
@@ -164,12 +168,13 @@ public class personasJDBC {
         personas.add(persona);
 
       }
-    } catch (Exception ex) {
-      ex.printStackTrace();
     } finally {
       Conexion.close(preparedStatement);
       Conexion.close(resultSet);
-      Conexion.close(connection);
+
+      if (this.userConn == null) {
+        Conexion.close(connection);
+      }
     }
 
     return personas;
