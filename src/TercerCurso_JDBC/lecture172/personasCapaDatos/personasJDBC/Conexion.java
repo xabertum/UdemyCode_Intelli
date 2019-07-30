@@ -50,5 +50,14 @@ public class Conexion {
 		}
 	}
 	
+	public static void close(Connection connection) {
+		try {
+			if (connection != null) connection.close();
+		} catch (SQLException sqlException) {
+			sqlException.printStackTrace();
+		}
+		
+	}
+	
 
 }
