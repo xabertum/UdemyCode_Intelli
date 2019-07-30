@@ -13,8 +13,8 @@ public class Conexion {
     if (driver == null) {
 
       try {
-        Class jdbcDriverClass = Class.forName(JDBC_CONNECTOR);
-        driver = (Driver) jdbcDriverClass.newInstance();
+        Class<?> jdbcDriverClass = Class.forName(JDBC_CONNECTOR);
+        driver = (Driver) jdbcDriverClass.getDeclaredConstructor().newInstance();
         DriverManager.registerDriver(driver);
 
       } catch (Exception ex) {
