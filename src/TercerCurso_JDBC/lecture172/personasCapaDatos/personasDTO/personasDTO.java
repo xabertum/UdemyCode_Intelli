@@ -6,8 +6,7 @@ public class personasDTO {
 	private String nombre;
 	private String apellido;
 
-	public personasDTO() {
-	}
+	public personasDTO() {}
 
 	personasDTO(int id_persona) {
 		this.id_persona = id_persona;
