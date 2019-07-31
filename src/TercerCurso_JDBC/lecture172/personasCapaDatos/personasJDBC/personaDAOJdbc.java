@@ -58,7 +58,7 @@ public class personaDAOJdbc implements personaDAO {
 			int index = 1;
 			preparedStatement.setString(index++, persona.getNombre());
 			preparedStatement.setString(index++, persona.getApellido());
-			preparedStatement.setInt(index++, persona.getId_persona());
+			preparedStatement.setInt(index, persona.getId_persona());
 			System.out.println("Ejecutando Query: " + SQL_UPDATE);
 			rows = preparedStatement.executeUpdate();
 			System.out.println("Registros actualizados: " + rows);
@@ -69,19 +69,72 @@ public class personaDAOJdbc implements personaDAO {
 				Conexion.close(connection);
 		}
 
-		return 0;
+		return rows;
 	}
 
 	@Override
 	public int delete(personasDTO persona) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		int rows = 0;
+
+		try {
+			connection = (this.connection != null) ? this.connection : Conexion.getConnection();
+			System.out.println("Ejecutando Query: " + SQL_DELETE);
+			preparedStatement = connection.prepareStatement(SQL_DELETE);
+			int index = 1;
+			preparedStatement.setInt(index, persona.getId_persona());
+			rows = preparedStatement.executeUpdate();
+			System.out.println("Registros borrados: " + rows);
+
+		} finally {
+			Conexion.close(preparedStatement);
+			if (this.connection == null)
+				Conexion.close(connection);
+		}
+
+		return rows;
 	}
 
 	@Override
 	public List<personasDTO> select() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		personasDTO personaDTO = null;
+		List<personasDTO> personasDTOs = new ArrayList<personasDTO>();
+
+		try {
+
+			connection = (this.connection != null) ? this.connection : Conexion.getConnection();
+			preparedStatement = connection.prepareStatement(SQL_SELECT);
+			System.out.println("Ejecutando Query: " + SQL_SELECT);
+			resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				int idPersonaTemp = resultSet.getInt(1);
+				String nombrePersonaTempString = resultSet.getString(2);
+				String apellidoPersonaTempString = resultSet.getString(3);
+
+				personaDTO = new personasDTO();
+				personaDTO.setId_persona(idPersonaTemp);
+				personaDTO.setNombre(nombrePersonaTempString);
+				personaDTO.setApellido(apellidoPersonaTempString);
+
+				personasDTOs.add(personaDTO);
+
+			}
+
+		} finally {
+			Conexion.close(resultSet);
+			Conexion.close(preparedStatement);
+			if (this.connection == null)
+				Conexion.close(connection);
+		}
+
+		return personasDTOs;
 	}
 
 }
