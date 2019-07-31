@@ -1,19 +1,18 @@
 package lecture172.personasCapaDatos.personasDTO;
 
 public class personasDTO {
-	
+
 	private int id_persona;
 	private String nombre;
 	private String apellido;
-	
-	public personasDTO() {}
-	
-	personasDTO (int id_persona) {
+
+	public personasDTO() {
+	}
+
+	personasDTO(int id_persona) {
 		this.id_persona = id_persona;
 	}
 
-	
-	
 	public int getId_persona() {
 		return id_persona;
 	}
@@ -37,13 +36,11 @@ public class personasDTO {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	
+
 	@Override
-	public String toString () {
+	public String toString() {
 		return "Persona {" + "id_persona" + id_persona + ", nombre=" + nombre + ", apellido=" + apellido + '}';
-		
-		
+
 	}
-	
 
 }
