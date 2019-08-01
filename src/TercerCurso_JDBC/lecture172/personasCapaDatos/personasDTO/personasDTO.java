@@ -8,7 +8,7 @@ public class personasDTO {
 
 	public personasDTO() {}
 
-	personasDTO(int id_persona) {
+	public personasDTO(int id_persona) {
 		this.id_persona = id_persona;
 	}
 
