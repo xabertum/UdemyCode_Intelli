@@ -3,6 +3,7 @@
 	<classpathentry kind="src" path="src/PrimerCurso"/>
 	<classpathentry kind="src" path="src/SegundoCurso"/>
 	<classpathentry kind="src" path="src/TercerCurso_JDBC"/>
+	<classpathentry kind="src" path="CuartoCurso_Servlets&amp;JSPs"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>
